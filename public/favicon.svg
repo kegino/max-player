@@ -1,12 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#e11d48" />
-      <stop offset="100%" stop-color="#0b0f19" />
+    <linearGradient id="g-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#030712" />
     </linearGradient>
+    <linearGradient id="g-play" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#be123c" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
-  <rect width="512" height="512" rx="112" fill="#0b0f19" stroke="#e11d48" stroke-width="16" />
-  <circle cx="256" cy="256" r="160" fill="url(#g1)" opacity="0.3" />
-  <polygon points="220,170 340,256 220,342" fill="#e11d48" />
-  <text x="256" y="440" font-family="Arial, sans-serif" font-weight="900" font-size="70" fill="#ffffff" text-anchor="middle">MP</text>
+
+  <!-- Container arredondado com borda sutil de neon -->
+  <rect width="512" height="512" rx="128" fill="url(#g-bg)" />
+  <rect x="4" y="4" width="504" height="504" rx="124" fill="none" stroke="url(#g-play)" stroke-width="6" stroke-opacity="0.4" />
+  <circle cx="256" cy="256" r="180" fill="#f43f5e" opacity="0.08" filter="url(#glow)"/>
+
+  
+        <path d="M150 350 L150 170 L210 260 L256 190 L302 260 L362 170 L362 350" stroke="url(#g-play)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)"/>
+        <polygon points="235,225 285,256 235,287" fill="#ffffff"/>
+        
 </svg>
